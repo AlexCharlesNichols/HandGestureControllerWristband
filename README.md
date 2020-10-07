@@ -7,7 +7,7 @@ classifies gestures based on accelerometer data. The code uses Python 3.7 and
 TensorFlow 2.0. The resulting model is less than 20KB in size.
 
 The following document contains instructions on using the scripts to train a
-model, and capturing your own training data.
+model using the given dataset.
 
 This project was inspired by the [TensorFlow Magic Wand example](https://https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/micro/examples/magic_wand/train)
 project.
