@@ -11,11 +11,13 @@ b.Characteristics
 
 c = characteristic(b,"Battery Service","Battery Level")
 % or use c = characteristic(b,"180F","2A19")
-
+volume = 1;
+[x,fs1] = audioread('6secbeep.wav');
+%sound(x,fs1)
+a=1;
 while 1
     close all
 data = read(c)
-
 %or 
 % [data,timestamp] = read(c)
 if (data == 3)
@@ -25,8 +27,28 @@ if (data == 3)
     soundsc(y,fs)
    
 elseif(data == 2)
+    
     fprintf('Volume up (Rotation_CW) \n')
+    
+    
+    if (data == 2 && a==1)
+    %volume = volume+1000
+    %z=volume*x;
+    [x,fs1] = audioread('6sec_tune.wav');
+    %sound(z,fs1)
+    sound(x,fs1)
+    imshow('volume_1.jpg')
+    a=0;
+    elseif (data ==2 && a==0)
+        volume = volume+10
+    z=volume*x;
+    sound(z,fs1)
     imshow('volume.jpeg')
+    a=1;
+    volume=1;
+    
+    end 
+    
 elseif(data == 1)
     fprintf('Light On(Arm Raise) \n')
     imshow('Light_On.png')
@@ -36,7 +58,7 @@ else
     
 end 
 pause(5)
-end        
+ end        
 
 % bt = bluetooth("Edin",1);
 % write(bt,[2,0,1,155])
