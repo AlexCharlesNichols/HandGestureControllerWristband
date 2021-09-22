@@ -13,11 +13,12 @@ BLE Sense
 Usign the files in the src folder, download them all and run in a c++ environment
 
 ## Train your own model
-#1.
+# 1.
 
 To train your own model, or create a new model for a new set of gestures,
 follow the instructions in [/train/README.md](https://https://github.com/AlexCharlesNichols/HandGestureControllerWristband/blob/main/train/README.md).
-#2.
+
+# 2.
 
 to send signals from arduino to a MATLAB program
 see files in the Central Bluetooth folder and run in a MATLAB environment
